@@ -4,6 +4,7 @@ import GetCat from '../getCat/getCat';
 import './App.css';
 import { format } from 'path';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import CatBreeds from '../catBreeds/catBreeds';
 
 function App() {
 
@@ -19,8 +20,8 @@ function App() {
       <BrowserRouter>
         <nav className='nav-bar'>
           <Link className='nav-link' to="/">Home</Link>
-          <Link className='nav-link' to="/getCat">Your Cat</Link>
-          <Link className='nav-link' to="/">Your Dog</Link>
+          <Link className='nav-link' to="/getCat">Some Cats</Link>
+          <Link className='nav-link' to="/catBreeds">Cat Breeds</Link>
 
 
 
@@ -30,6 +31,7 @@ function App() {
 
         <Routes>
           <Route path="/getCat" element={<GetCat />} />
+          <Route path="/catBreeds" element={<CatBreeds />} />
         </Routes>
 
 

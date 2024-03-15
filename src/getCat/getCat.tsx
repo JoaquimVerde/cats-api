@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 const GetCat = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState<any[]>([]);
+    let [page, setPage] = useState(0);
 
     useEffect(() => {
-        fetch("https://api.thecatapi.com/v1/images/0XYvRd7oD", {
+        fetch(`https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=${page}&limit=8`, {
             headers: {
                 authorization: 'live_pKdjOY3ZVqNkolSIwv4wFBH3Znbp08ICfQYHvO7NGoh4wQQXT0FglBXw4EyqyKEP-api-key'
             }
@@ -15,7 +16,7 @@ const GetCat = () => {
             .then(
                 (result) => {
                     setIsLoaded(true);
-                    setItems(result.data);
+                    setItems(result);
                 })
             .catch(error => {
                 setIsLoaded(true);
@@ -24,11 +25,30 @@ const GetCat = () => {
             );
     }, []);
 
+    const increasePage = () => {
+        setPage(page++);
+    }
+    const decreasePage = () => {
+        setPage(page--);
+    }
+
     return (
 
         <div>
 
-            <li>{items}</li>
+            <div className="paging-buttons">
+                <button className="button" onClick={increasePage}>Previous</button>
+                <button className="button" onClick={increasePage}>Next</button>
+            </div>
+
+            <div className="list">
+
+                {items.map((item) => (
+                    <ul >
+                        <img className="cat-picture" src={item.url} />
+                    </ul>
+                ))}
+            </div>
 
         </div>
 
