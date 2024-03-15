@@ -1,25 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './images/cat-logo-1.png';
+import GetCat from './getCat';
 import './App.css';
+import { format } from 'path';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 
 function App() {
+
+
   return (
     <div className="App">
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p id="header-text">Cats & Cats</p>
       </header>
+
+      <BrowserRouter>
+        <nav className='nav-bar'>
+          <Link className='nav-link' to="/getCat">Cat</Link>
+
+
+        </nav>
+
+
+        <Routes>
+          <Route path="/getCat" element={<GetCat />} />
+        </Routes>
+
+
+
+
+
+
+
+      </BrowserRouter>
+
+
+
     </div>
+
   );
 }
 

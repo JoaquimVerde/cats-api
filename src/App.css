@@ -1,9 +1,14 @@
+body {
+  background-color: #eff3ce;
+  ;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -14,25 +19,63 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 30vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#header-text {
+  margin-left: 1rem;
+  font-family: Trebuchet MS;
+  color: #847919;
+  font-size: larger;
 }
 
+
 @keyframes App-logo-spin {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+
+  25% {
+    transform: rotate(30deg);
   }
+
+  75% {
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.button {
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+}
+.nav-bar {
+  background-color:rgb(241, 221, 179);
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 10vmin;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 3%;
+}
+.nav-link {
+  margin-left: 3%;
+  margin-right: 3%;
+  font-family: Trebuchet MS;
+  font-size: 1.25rem;
+  color:rgb(86, 73, 15);  
 }
