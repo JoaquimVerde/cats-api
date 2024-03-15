@@ -18,7 +18,11 @@ function App() {
 
       <BrowserRouter>
         <nav className='nav-bar'>
-          <Link className='nav-link' to="/getCat">Cat</Link>
+          <Link className='nav-link' to="/">Home</Link>
+          <Link className='nav-link' to="/getCat">Your Cat</Link>
+          <Link className='nav-link' to="/">Your Dog</Link>
+
+
 
 
         </nav>
