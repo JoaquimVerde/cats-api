@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './images/cat-logo-1.png';
-import GetCat from './getCat';
+import logo from '../images/cat-logo-1.png';
+import GetCat from '../getCat/getCat';
 import './App.css';
 import { format } from 'path';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
@@ -31,10 +31,6 @@ function App() {
         <Routes>
           <Route path="/getCat" element={<GetCat />} />
         </Routes>
-
-
-
-
 
 
 
