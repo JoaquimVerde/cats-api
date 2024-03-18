@@ -4,10 +4,10 @@ const GetCat = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState<any[]>([]);
-    let [page, setPage] = useState(0);
+    let [page, setPage] = useState(1);
 
     useEffect(() => {
-        fetch(`https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=${page}&limit=8`, {
+        fetch(`https://api.thecatapi.com/v1/images/search?page=${page}&limit=8`, {
             headers: {
                 authorization: 'live_pKdjOY3ZVqNkolSIwv4wFBH3Znbp08ICfQYHvO7NGoh4wQQXT0FglBXw4EyqyKEP-api-key'
             }
@@ -23,13 +23,15 @@ const GetCat = () => {
                 setError(error);
             }
             );
-    }, []);
+    }, [page]);
 
     const increasePage = () => {
-        setPage(page++);
+        setPage(page+1);
+        console.log(page);
     }
     const decreasePage = () => {
-        setPage(page--);
+        setPage(page-1);
+        console.log(page);
     }
 
     return (
@@ -37,7 +39,7 @@ const GetCat = () => {
         <div>
 
             <div className="paging-buttons">
-                <button className="button" onClick={increasePage}>Previous</button>
+                <button className="button" onClick={decreasePage}>Previous</button>
                 <button className="button" onClick={increasePage}>Next</button>
             </div>
 
