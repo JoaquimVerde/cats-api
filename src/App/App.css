@@ -19,7 +19,7 @@ body {
 }
 
 .App-header {
-  min-height: 30vh;
+  height: 30vmin;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -96,4 +96,62 @@ body {
 }
 .paging-buttons{
   margin-top: 1.5rem;
+}
+.cat-breeds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+ 
+}
+.breed {
+  display: flex;
+  flex-direction: row;
+}
+.breed-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: justify;
+  
+}
+.breed-picture {
+  max-width: 15vh;
+  max-height: 10vh;
+  cursor: pointer;
+}
+.breed-description {
+  display: flex;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-top: 1rem;
+
+}
+.description-picture {
+  height: 40vmin;
+  
+}
+
+.description-levels {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: justify;
+}
+
+@media (max-width: 600px) {
+
+  .breed-description{
+    flex-direction: column;
+  }
+  .cat-breeds{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.10rem;
+    flex-wrap: wrap;
+  }
+  .cat-picture{
+    width: 80vmin;
+  }
+   
 }

@@ -44,7 +44,7 @@ const GetCat = () => {
             <div className="list">
 
                 {items.map((item) => (
-                    <ul >
+                    <ul key={item.id}>
                         <img className="cat-picture" src={item.url} />
                     </ul>
                 ))}

@@ -5,6 +5,7 @@ import './App.css';
 import { format } from 'path';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import CatBreeds from '../catBreeds/catBreeds';
+import CatDescription from '../catBreeds/catDescription';
 
 function App() {
 
@@ -32,6 +33,8 @@ function App() {
         <Routes>
           <Route path="/getCat" element={<GetCat />} />
           <Route path="/catBreeds" element={<CatBreeds />} />
+          <Route path="/catBreeds/catDescription" element={<CatDescription />} />
+
         </Routes>
 
 
