@@ -16,6 +16,7 @@ const CatBreeds = () => {
 
 
     useEffect(() => {
+        setIsLoaded(false);
         fetch(`https://api.thecatapi.com/v1/breeds?limit=15&page=${page}`, {
             headers: {
                 "x-api-key": 'live_pKdjOY3ZVqNkolSIwv4wFBH3Znbp08ICfQYHvO7NGoh4wQQXT0FglBXw4EyqyKEP'
@@ -34,7 +35,7 @@ const CatBreeds = () => {
             );
     }, [page]);
 
-    const getDescription = (itemId: any) => {
+    const getDescription = (itemId: string) => {
         sessionStorage.setItem("id", itemId);
         navigate("/catBreeds/catDescription");
     }
