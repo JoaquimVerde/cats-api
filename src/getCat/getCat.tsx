@@ -9,7 +9,7 @@ const GetCat = () => {
     useEffect(() => {
         fetch(`https://api.thecatapi.com/v1/images/search?page=${page}&limit=8`, {
             headers: {
-                authorization: 'live_pKdjOY3ZVqNkolSIwv4wFBH3Znbp08ICfQYHvO7NGoh4wQQXT0FglBXw4EyqyKEP-api-key'
+                "x-api-key": 'live_pKdjOY3ZVqNkolSIwv4wFBH3Znbp08ICfQYHvO7NGoh4wQQXT0FglBXw4EyqyKEP'
             }
         })
             .then((response) => response.json())

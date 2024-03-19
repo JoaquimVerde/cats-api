@@ -2,10 +2,10 @@ import React from 'react';
 import logo from '../images/cat-logo-1.png';
 import GetCat from '../getCat/getCat';
 import './App.css';
-import { format } from 'path';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import CatBreeds from '../catBreeds/catBreeds';
 import CatDescription from '../catBreeds/catDescription';
+import Home from '../home';
 
 function App() {
 
@@ -23,9 +23,7 @@ function App() {
           <Link className='nav-link' to="/">Home</Link>
           <Link className='nav-link' to="/getCat">Some Cats</Link>
           <Link className='nav-link' to="/catBreeds">Cat Breeds</Link>
-
-
-
+                
 
         </nav>
 
@@ -34,6 +32,8 @@ function App() {
           <Route path="/getCat" element={<GetCat />} />
           <Route path="/catBreeds" element={<CatBreeds />} />
           <Route path="/catBreeds/catDescription" element={<CatDescription />} />
+          <Route path="/" element={<Home />} />
+
 
         </Routes>
 

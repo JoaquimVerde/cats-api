@@ -74,6 +74,7 @@ body {
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .nav-link {
   margin-left: 3%;
@@ -126,20 +127,21 @@ body {
   margin-left: 4rem;
   margin-right: 4rem;
   margin-top: 1rem;
-
+  color:rgb(86, 73, 15);
 }
 .description-picture {
-  height: 40vmin;
-  
+  height: 40vmin; 
 }
+
 
 .description-levels {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: justify;
+  color:rgb(86, 73, 15);  
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
   .breed-description{
     flex-direction: column;
@@ -153,5 +155,14 @@ body {
   .cat-picture{
     width: 80vmin;
   }
-   
+  .description-levels {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;  
+    margin-left: -2rem;  
+  }
+  .description-text{
+    margin-left: -2rem;
+  }
+  
 }

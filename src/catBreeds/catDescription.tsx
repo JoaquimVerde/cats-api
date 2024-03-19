@@ -1,5 +1,7 @@
 
 import { useEffect, useState } from "react";
+import cat from "../images/default-cat2.webp";
+
 
 
 
@@ -11,7 +13,7 @@ const CatDescription = () => {
     useEffect(() => {
         fetch(`https://api.thecatapi.com/v1/breeds/${sessionStorage.getItem("id")}`, {
             headers: {
-                authorization: 'live_pKdjOY3ZVqNkolSIwv4wFBH3Znbp08ICfQYHvO7NGoh4wQQXT0FglBXw4EyqyKEP-api-key'
+                "x-api-key": 'live_pKdjOY3ZVqNkolSIwv4wFBH3Znbp08ICfQYHvO7NGoh4wQQXT0FglBXw4EyqyKEP'
             }
         })
             .then((response) => response.json())
@@ -37,7 +39,8 @@ const CatDescription = () => {
 
             <div className="breed-description">
 
-                <img className="description-picture" src={`https://cdn2.thecatapi.com/images/${items.reference_image_id}.jpg`} />
+                <img className="description-picture"
+                    src={(items.reference_image_id && items.reference_image_id.length > 0) ? (`https://cdn2.thecatapi.com/images/${items.reference_image_id}.jpg`) : (cat)} />
                 <div>
                     <div className="description-text"><ul>{items.description}</ul></div>
                     <div className="description-levels">
