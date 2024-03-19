@@ -63,13 +63,10 @@ const CatBreeds = () => {
                     {items.map((item) => (
                         <ul className="breed" key={item.id}>
 
-                           
                             <img
                                 className="breed-picture"
                                 src={(item.image && item.image.url && item.image.url.length > 0) ? (item.image.url) : (cat)}
                                 onClick={() => getDescription(item.id)} />
-                           
-
 
                             <div className="breed-info">
                                 <ul>Breed: {item.name}</ul>
