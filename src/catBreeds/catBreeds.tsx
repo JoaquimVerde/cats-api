@@ -58,7 +58,14 @@ const CatBreeds = () => {
             <div>
                 <div className="paging-buttons">
                     <button className="button" onClick={decreasePage}>Previous</button>
+                    <button className="button" onClick={() => setPage(0)}>1</button>
+                    <button className="button" onClick={() => setPage(1)}>2</button>
+                    <button className="button" onClick={() => setPage(2)}>3</button>
+                    <button className="button" onClick={() => setPage(3)}>4</button>
+                    <button className="button" onClick={() => setPage(4)}>5</button>
                     <button className="button" onClick={increasePage}>Next</button>
+
+
                 </div>
                 <div className="cat-breeds">
                     {items.map((item) => (
